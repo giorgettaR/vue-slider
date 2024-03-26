@@ -30,7 +30,7 @@ createApp ({
         }
     },
     methods: {
-        sliderUp(){
+        sliderDown(){
             if (this.currentSlideIndex < this.slides.length - 1) {
                 this.currentSlideIndex++
             } else {
@@ -38,7 +38,7 @@ createApp ({
             }
             // console.log(this.currentSlideIndex)
         },
-        sliderDown(){
+        sliderUp(){
             if (this.currentSlideIndex > 0) {
                 this.currentSlideIndex--
             } else {
