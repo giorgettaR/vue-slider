@@ -27,6 +27,7 @@ createApp ({
                 }
             ],
         currentSlideIndex: 0,
+        autoSlider: '',
         }
     },
     methods: {
@@ -36,7 +37,6 @@ createApp ({
             } else {
                 this.currentSlideIndex = 0
             }
-            // console.log(this.currentSlideIndex)
         },
         sliderUp(){
             if (this.currentSlideIndex > 0) {
@@ -44,11 +44,17 @@ createApp ({
             } else {
                 this.currentSlideIndex = this.slides.length - 1
             }
-            // console.log(this.currentSlideIndex)
         },
+        stopAutoSlider() {
+            clearInterval(this.autoSlider);
+        },
+        runAutoSlider() {
+            setInterval(this.sliderDown, 3000);
+        }
     },
     mounted() {
         console.log(this.slides);
+        this.autoSlider = setInterval(this.sliderDown, 3000);
     }
 }).mount('#app')
 

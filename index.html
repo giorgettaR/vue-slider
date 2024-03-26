@@ -14,8 +14,11 @@
     <div id="app">
 
         <div class="container">
-            <div class="slider-wrapper" tabindex="0">
-
+            <div
+                class="slider-wrapper"
+                @mouseover = "stopAutoSlider"
+                @mouseleave = "runAutoSlider"
+            >
                 <div class="item">
                     <img :src="slides[currentSlideIndex].image" :alt="slides[currentSlideIndex].title" />
                     <div class="text">
